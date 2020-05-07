@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import TimesTables from './TimesTables';
 import Nav from './Nav';
+import Barbie from './barbieEngineer.jpg';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class App extends Component {
               '11 X 1 = 11',
               '12 X 1 = 12'
             ],
-            id : 'one'
+            id : 'one',
+            img: <img src={Barbie} />
           },
           {
           title: 'Two Times Table',
@@ -251,16 +253,13 @@ class App extends Component {
     }
     return (
       <div className="App">
+      
+        <div id="learn"><strong>Learn your Times Tables with Barbie</strong></div>
         <Nav
         timestables={this.state.timestables}
         activeTimesTable={this.state.chosenTimesTable}
         timesTableToChoose={this.chooseATimesTable}
         />
-        <div id="learn"><strong>Learn your Times Tables with Barbie</strong></div>
-        <div id="mattel">***</div>
-        <div id="mattel2">***</div>
-        <div id="mattel3">***</div>
-        <div id="mattel4">***</div>
         { 
           timesTableToChoose ? 
             <TimesTables
@@ -274,6 +273,8 @@ class App extends Component {
       </div>
     );
   }
+
+ 
 
   componentDidMount() {
     const timesTableToShow = this.state.timestables[0].id || null;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 #learn {
     background-color: $colour-main;
     font-family: $font-main;
@@ -24,11 +26,52 @@
 h2 {
   text-align: center;
   background-color: rgb(245, 220, 241);
+  font-family: Satisfy;
 }
 
 ul {
   display: inline-block; 
+  align-self: flex-start;
+
+ 
+}
+
+h3 {
+  background-color: rgb(236, 198, 227);
+}
+
+.TimesTable {
+  font-size: 16px;
+
+  font-family: Satisfy;
+}
+
+div { 
+  text-align: center; 
   
 }
 
-div { text-align: center; }
+button {
+  color: rgb(5, 24, 27);
+  background-color: rgb(247, 181, 230);
+  width: 80px;
+  height: 40px;
+  padding: 2px;
+  margin: 5px;
+}
+
+img {
+  height: 300px;
+  
+}
+
+.display-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#dashed {
+ 
+  width: 2000px;
+}
