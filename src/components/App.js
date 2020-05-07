@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 import TimesTables from './TimesTables';
+import Nav from './Nav';
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.chooseATimesTable = this.chooseATimesTable.bind(this);
       this.state = {
         timestables: [
 
@@ -24,7 +26,7 @@ class App extends Component {
               '11 X 1 = 11',
               '12 X 1 = 12'
             ],
-            id : 1
+            id : 'one'
           },
           {
           title: 'Two Times Table',
@@ -42,7 +44,7 @@ class App extends Component {
             '11 X 2 = 22',
             '12 X 2 = 24'
           ],
-          id : 2
+          id : 'two'
         },
         {
           title: 'Three Times Table',
@@ -60,7 +62,7 @@ class App extends Component {
             '11 X 3 = 33',
             '12 X 3 = 36'
           ],
-          id : 3
+          id : 'three'
         },
         {
           title: 'Four Times Table',
@@ -78,7 +80,7 @@ class App extends Component {
             '11 X 4 = 44',
             '12 X 4 = 48'
           ],
-          id : 4
+          id : 'four'
         },
         {
           title: 'Five Times Table',
@@ -96,7 +98,7 @@ class App extends Component {
             '11 X 5 = 55',
             '12 X 5 = 60'
           ],
-          id : 5
+          id : 'five'
         },
         {
           title: 'Six Times Table',
@@ -114,7 +116,7 @@ class App extends Component {
             '11 X 6 = 66',
             '12 X 6 = 72'
           ],
-          id : 6
+          id : 'six'
         },
         {
           title: 'Seven Times Table',
@@ -132,7 +134,7 @@ class App extends Component {
             '11 X 7 = 77',
             '12 X 7 = 84'
           ],
-          id : 7
+          id : 'seven'
         },
         {
           title: 'Eight Times Table',
@@ -150,7 +152,7 @@ class App extends Component {
             '11 X 8 = 88',
             '12 X 8 = 96'
           ],
-          id : 8
+          id : 'eight'
         },
         {
           title: 'Nine Times Table',
@@ -168,7 +170,7 @@ class App extends Component {
             '11 X 9 = 99',
             '12 X 9 = 108'
           ],
-          id : 9
+          id : 'nine'
         },
         {
           title: 'Ten Times Table',
@@ -186,7 +188,25 @@ class App extends Component {
             '11 X 10 = 110',
             '12 X 10 = 120'
           ],
-          id : 11
+          id : 'ten'
+        },
+        { 
+          title: 'Eleven Times Table',
+          maths: [
+            '1 X 11 = 11',
+            '2 X 11 = 22',
+            '3 X 11 = 33',
+            '4 X 11 = 44',
+            '5 X 11 = 55',
+            '6 X 11 = 66',
+            '7 X 11 = 77',
+            '8 X 11 = 88',
+            '9 X 11 = 99',
+            '10 X 11 = 110',
+            '11 X 11 = 121',
+            '12 X 11 = 122'
+          ],
+          id: 'eleven'
         },
         {
           title: 'Twelve Times Table',
@@ -204,28 +224,63 @@ class App extends Component {
             '11 X 12 = 122',
             '12 X 12 = 124'
           ],
-          id : 12
+          id : 'twelve'
         },
-      ]
+      ],
+      chosenTimesTable: null
         
       }
   }
 
+  chooseATimesTable(timesTableId) {
+    if(timesTableId) {
+      this.setState({
+        ...this.state,
+        chosenTimesTable: timesTableId
+      });
+    }
+  }
+
   render() {
+    let timesTableToChoose;
+    if(this.state.chosenTimesTable) { 
+      const filteredTimesTables = this.state.timestables.filter((timestable) => timestable.id === this.state.chosenTimesTable);  
+      if(filteredTimesTables.length > 0) { 
+        timesTableToChoose = filteredTimesTables[0];
+      }
+    }
     return (
       <div className="App">
-        <h1>Learn your Times Tables with Barbie</h1>
+        <Nav
+        timestables={this.state.timestables}
+        activeTimesTable={this.state.chosenTimesTable}
+        timesTableToChoose={this.chooseATimesTable}
+        />
+        <div id="learn"><strong>Learn your Times Tables with Barbie</strong></div>
+        <div id="mattel">***</div>
+        <div id="mattel2">***</div>
+        <div id="mattel3">***</div>
+        <div id="mattel4">***</div>
         { 
-          this.state.timestables.map((timestable, i) => 
+          timesTableToChoose ? 
             <TimesTables
-              title={timestable.title} 
-              maths={timestable.maths}
-              key={i}
+              title={timesTableToChoose.title} 
+              maths={timesTableToChoose.maths}
+              
             />
-          ) 
+          :
+          null
         }
       </div>
     );
+  }
+
+  componentDidMount() {
+    const timesTableToShow = this.state.timestables[0].id || null;
+    this.setState({
+      ...this.state,
+      chosenTimesTable: timesTableToShow
+    });
   }
   
 }

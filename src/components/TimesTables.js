@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 class TimesTables extends Component {
@@ -18,7 +19,11 @@ class TimesTables extends Component {
     }
 
 
-
+    TimesTables.propTypes = {
+        maths: PropTypes.array.isRequired,
+        title: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired
+      };
 
 
 export default TimesTables 

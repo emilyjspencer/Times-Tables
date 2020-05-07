@@ -1,4 +1,34 @@
-h1 {
-    background-color: $color-main;
+#learn {
+    background-color: $colour-main;
     font-family: $font-main;
-  }
+    font-size: 40px;
+    
+}
+
+#mattel {
+  background-color: rgb(245, 206, 239);
+}
+
+#mattel2 {
+  background-color: rgb(245, 220, 241);
+}
+
+#mattel3 {
+  background-color: rgb(247, 217, 242);
+}
+
+#mattel4 {
+  background-color: rgb(247, 236, 245);
+}
+
+h2 {
+  text-align: center;
+  background-color: rgb(245, 220, 241);
+}
+
+ul {
+  display: inline-block; 
+  
+}
+
+div { text-align: center; }
