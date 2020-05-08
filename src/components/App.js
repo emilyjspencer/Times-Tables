@@ -224,7 +224,7 @@ class App extends Component {
             '9 X 12 = 108',
             '10 X 12 = 120',
             '11 X 12 = 122',
-            '12 X 12 = 124'
+            '12 X 12 = 148'
           ],
           id : 'twelve'
         },
