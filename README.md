@@ -40,4 +40,4 @@ localhost:3000
 
 ![homepage](barbietwo.png)
 ![homepage](barbieseven.png)
-![homepage](barbietwelve2.png)
+![homepage](barbietwelve3.png)
