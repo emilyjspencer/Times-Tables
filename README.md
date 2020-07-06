@@ -20,8 +20,6 @@ npm install
 npm start
 ```
 * The application will automatically open in the browser at localhost:3000
-```
-
 
 ### Built with:
 
