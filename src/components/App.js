@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import TimesTables from './TimesTables';
 import Nav from './Nav';
-import Barbie from './barbieEngineer.jpg';
+import Barbie from './barbieEngineer.png';
 
 class App extends Component {
   constructor(props) {

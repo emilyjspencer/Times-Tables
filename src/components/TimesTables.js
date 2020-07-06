@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Barbie from './barbieEngineer.jpg';
+import Barbie from './barbieEngineer.png';
 
 
 class TimesTables extends Component {
