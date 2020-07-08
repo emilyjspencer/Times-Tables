@@ -1,7 +1,8 @@
 #  Learn your Times Tables with Barbie
 
-#### Click a button to choose a times table to learn
+### Click a button to choose a times table to learn
 
+**Times Tables** is deployed with **Surge** at: [this link](http://useful-cushion.surge.sh/)!
 
 ### How to use:
 
@@ -33,4 +34,5 @@ npm start
 ![homepage](barbieseven.png)
 ![homepage](barbietwelve3.png)
 
-Deployed with Surge at: useful-cushion.surge.sh
+
+### Deployed with Surge at: [this link](http://useful-cushion.surge.sh/)!
