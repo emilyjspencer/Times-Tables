@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Barbie from './barbieEngineer.png';
+
 
 
 class TimesTables extends Component {
     render() {
         const maths = this.props.maths.map((math, i) => <li key={i}>{math}</li>);
+        const img = this.props.img;
 
         return(
             <div className="TimesTable">
@@ -14,8 +15,9 @@ class TimesTables extends Component {
                 <div class="flex-container">
                 <ul>
                     {maths}
+                    <h3>{this.props.img}</h3>
                 </ul>
-                <img src={Barbie} />
+                
                 </div>
             </div>
         );

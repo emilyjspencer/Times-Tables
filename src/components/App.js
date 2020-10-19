@@ -2,12 +2,29 @@ import React, { Component } from 'react';
 
 import TimesTables from './TimesTables';
 import Nav from './Nav';
+import Header from './Header';
+import Quiz from './Quiz';
 import Barbie from './barbieEngineer.png';
+import Woody from './woody.jpg';
+import Cinderella from './cinderella.jpg';
+import Hercules from './hercules.jpg';
+import Moana from './moana.jpg';
+import Mickey from './mickey.jpg';
+import Elsa from './elsa.jpg';
+import Olaf from './olaf.jpg';
+import Flynn from './flynn.jpg';
+import Ariel from './ariel.jpg';
+import Maleficient from './maleficient.jpg';
+import Naveen from './naveen.jpg';
+import Belle from './belle.jpg';
+import Test from './test.png';
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.chooseATimesTable = this.chooseATimesTable.bind(this);
+
       this.state = {
         timestables: [
 
@@ -28,7 +45,7 @@ class App extends Component {
               '12 X 1 = 12'
             ],
             id : 'one',
-            img: <img src={Barbie} />
+            img: <img src={Olaf} alt="olaf" />
           },
           {
           title: 'Two Times Table',
@@ -46,7 +63,8 @@ class App extends Component {
             '11 X 2 = 22',
             '12 X 2 = 24'
           ],
-          id : 'two'
+          id : 'two',
+          img: <img src={Hercules} alt="hercules" />
         },
         {
           title: 'Three Times Table',
@@ -64,7 +82,8 @@ class App extends Component {
             '11 X 3 = 33',
             '12 X 3 = 36'
           ],
-          id : 'three'
+          id : 'three',
+          img: <img src={Cinderella} alt="cinderella" />
         },
         {
           title: 'Four Times Table',
@@ -82,7 +101,8 @@ class App extends Component {
             '11 X 4 = 44',
             '12 X 4 = 48'
           ],
-          id : 'four'
+          id : 'four',
+          img: <img src={Woody} />
         },
         {
           title: 'Five Times Table',
@@ -100,7 +120,8 @@ class App extends Component {
             '11 X 5 = 55',
             '12 X 5 = 60'
           ],
-          id : 'five'
+          id : 'five',
+          img: <img src={Elsa} alt="elsa"/>
         },
         {
           title: 'Six Times Table',
@@ -118,7 +139,8 @@ class App extends Component {
             '11 X 6 = 66',
             '12 X 6 = 72'
           ],
-          id : 'six'
+          id : 'six',
+          img: <img src={Moana} />
         },
         {
           title: 'Seven Times Table',
@@ -136,7 +158,8 @@ class App extends Component {
             '11 X 7 = 77',
             '12 X 7 = 84'
           ],
-          id : 'seven'
+          id : 'seven',
+          img: <img src={Mickey}  alt="mickey"/>
         },
         {
           title: 'Eight Times Table',
@@ -154,7 +177,8 @@ class App extends Component {
             '11 X 8 = 88',
             '12 X 8 = 96'
           ],
-          id : 'eight'
+          id : 'eight',
+          img: <img src={Maleficient} alt="maleficient" />
         },
         {
           title: 'Nine Times Table',
@@ -172,7 +196,8 @@ class App extends Component {
             '11 X 9 = 99',
             '12 X 9 = 108'
           ],
-          id : 'nine'
+          id : 'nine',
+          img: <img src={Flynn}  alt="flynn" />
         },
         {
           title: 'Ten Times Table',
@@ -190,7 +215,8 @@ class App extends Component {
             '11 X 10 = 110',
             '12 X 10 = 120'
           ],
-          id : 'ten'
+          id : 'ten',
+          img: <img src={Ariel}  alt="ariel" />
         },
         { 
           title: 'Eleven Times Table',
@@ -208,7 +234,8 @@ class App extends Component {
             '11 X 11 = 121',
             '12 X 11 = 122'
           ],
-          id: 'eleven'
+          id: 'eleven',
+          img: <img src={Naveen} alt="princenaveen" />
         },
         {
           title: 'Twelve Times Table',
@@ -226,22 +253,31 @@ class App extends Component {
             '11 X 12 = 132',
             '12 X 12 = 148'
           ],
-          id : 'twelve'
+          id : 'twelve',
+          img: <img src={Belle} alt="belle" />
+          
         },
+        {
+        title: 'Quiz',
+        img: <img src={Test} alt="test" />
+        }
+
       ],
-      chosenTimesTable: null
+      chosenTimesTable: null,
+      chosenTimesTableImage: null
         
       }
   }
 
   chooseATimesTable(timesTableId) {
-    if(timesTableId) {
+    if(timesTableId) { // if id exists update the state - cant manipulate state directly
       this.setState({
         ...this.state,
         chosenTimesTable: timesTableId
       });
     }
   }
+
 
   render() {
     let timesTableToChoose;
@@ -250,21 +286,30 @@ class App extends Component {
       if(filteredTimesTables.length > 0) { 
         timesTableToChoose = filteredTimesTables[0];
       }
+    }let timesTableImageToChoose;
+    if(this.state.chosenTimesTableImage) { 
+      const filteredTimesTables = this.state.timestables.filter((timestable) => timestable.id === this.state.chosenTimesTableImage);  
+      if(filteredTimesTables.length > 0) { 
+        timesTableImageToChoose = filteredTimesTables[0];
+      }
     }
+
     return (
       <div className="App">
-      
-        <div id="learn"><strong>Learn your Times Tables with Barbie</strong></div>
+        <Header />
+        <div id="learn"><strong>Learn your Times Tables with Disney Characters</strong></div>
         <Nav
         timestables={this.state.timestables}
         activeTimesTable={this.state.chosenTimesTable}
         timesTableToChoose={this.chooseATimesTable}
         />
+        
         { 
           timesTableToChoose ? 
             <TimesTables
               title={timesTableToChoose.title} 
               maths={timesTableToChoose.maths}
+              img={timesTableToChoose.img}
               
             />
           :
@@ -278,9 +323,11 @@ class App extends Component {
 
   componentDidMount() {
     const timesTableToShow = this.state.timestables[0].id || null;
+    const imageToShow = this.state.timestables[0].img || null;
     this.setState({
       ...this.state,
       chosenTimesTable: timesTableToShow
+      
     });
   }
   

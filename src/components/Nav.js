@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+
 import PropTypes from 'prop-types';
 
 class Nav extends Component {
+
   constructor(props) {
     super(props);
     this.changeTimesTable = this.changeTimesTable.bind(this);
@@ -12,6 +14,7 @@ class Nav extends Component {
     const timesTableId = buttonId.split('_')[0];
     this.props.timesTableToChoose(timesTableId);
   }
+
   render() {
     return (
       <div className="Navigation">
@@ -28,6 +31,7 @@ class Nav extends Component {
             )
           }
         </ul>
+
       </div>
     );
   }
