@@ -14,23 +14,23 @@ export const quizData = [
      }, 
      {
      id: 3,
-        question: 'Who is the headteacher of Beauxbatons Academy of Magic?',
-        options: ['Igor Karkaroff', 'Armando Dippet' ,'Agilbert Fontaine', 'Madame Maxine'], 
-        answer: "Madame Maxine"
+        question: 'What is 12 X 5?',
+        options: ['60', '50' ,'48', '70'], 
+        answer: "60"
      },
      {
   
       id: 4,
-        question: 'What is the name of Voldemort\'s snake?',
-        options: ['Ningini', 'Nungini', 'Nengani', 'Nagini'], 
-        answer: "Nagini"
+        question: 'What is 4 X 6?',
+        options: ['28', '32', '24', '26'], 
+        answer: "24"
   
      }, {
   
       id: 5,
-      question: 'Where did Vernon Dursley work?',
-      options: ['Groundings', 'Grunnings' ,'Grunlings', 'Bank of England'], 
-      answer: "Grunnings"
+      question: 'What is 8 X 9?',
+      options: ['72', '56' ,'72', '81'], 
+      answer: "72"
      }, {
   
       id: 6,

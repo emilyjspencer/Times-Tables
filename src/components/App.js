@@ -4,13 +4,12 @@ import TimesTables from './TimesTables';
 import Nav from './Nav';
 import Header from './Header';
 import Quiz from './Quiz';
-import Barbie from './barbieEngineer.png';
 import Woody from './woody.jpg';
 import Cinderella from './cinderella.jpg';
 import Hercules from './hercules.jpg';
-import Moana from './moana.jpg';
+import Moana from './moana3.jpg';
 import Mickey from './mickey.jpg';
-import Elsa from './elsa.jpg';
+import Elsa from './elsa2.jpg';
 import Olaf from './olaf.jpg';
 import Flynn from './flynn.jpg';
 import Ariel from './ariel.jpg';
@@ -18,6 +17,14 @@ import Maleficient from './maleficient.jpg';
 import Naveen from './naveen.jpg';
 import Belle from './belle.jpg';
 import Test from './test.png';
+import Simba from './simba.jpg';
+import Aladdin2 from './aladdin2.jpg';
+import Aladdin from './aladdin.jpg';
+import Buzz from './buzz.jpg';
+import EricAriel from './ericariel.jpg';
+
+
+import '../App.css';
 
 class App extends Component {
 
@@ -45,7 +52,7 @@ class App extends Component {
               '12 X 1 = 12'
             ],
             id : 'one',
-            img: <img src={Olaf} alt="olaf" />
+            img: <img src={Olaf} alt="olaf" />,
           },
           {
           title: 'Two Times Table',
@@ -308,8 +315,9 @@ class App extends Component {
           timesTableToChoose ? 
             <TimesTables
               title={timesTableToChoose.title} 
+              img={timesTableToChoose.img}  className="image"
               maths={timesTableToChoose.maths}
-              img={timesTableToChoose.img}
+              
               
             />
           :
