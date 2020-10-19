@@ -1,8 +1,8 @@
-#  Learn your Times Tables with Barbie
+#  Learn your Times Tables with Disney Characters
 
 ### Click a button to choose a times table to learn
 
-**Times Tables** is deployed with **Surge** at: [this link](http://useful-cushion.surge.sh/)!
+**Times Tables** is deployed with **Surge** at: [this link](http://aback-statement.surge.sh/)!
 
 ### How to use:
 
@@ -25,14 +25,14 @@ npm start
 ### Built with:
 
 * React
-* HTML/CSS
+* HTML/CSS/Sass
 
 
 ### What it looks like:
 
-![homepage](barbietwo.png)
-![homepage](barbieseven.png)
-![homepage](barbietwelve3.png)
+![homepage](timestables1.png)
+![homepage](timestables2.png)
+![homepage](timestables3.png)
 
 
-### Deployed with Surge at: [this link](http://useful-cushion.surge.sh/)!
+### Deployed with Surge at: [this link](http://aback-statement.surge.sh//)!
